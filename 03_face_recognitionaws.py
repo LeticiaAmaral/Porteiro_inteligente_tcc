@@ -23,7 +23,7 @@ client = boto3.client('dynamodb', region_name='us-east-1')
 mqttc = paho.Client()                                   
 mqttc.on_connect = on_connect                              
 mqttc.on_message = on_message                               
-awshost = "a2xkvczx6vsoxz-ats.iot.us-east-1.amazonaws.com"      
+awshost = "********"      
 awsport = 8883                                            
 clientId = "raspiberry_Client"                                   
 thingName = "raspiberry_Client"                              
@@ -38,9 +38,9 @@ mqttc.connect(awshost, awsport, keepalive=60)
 mqttc.loop_start()
 
 dynamodb = boto3.resource('dynamodb',
-                          aws_access_key_id='AKIAZOZJZUBEECDCQK5S',
-                          aws_secret_access_key='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',
-                          region_name='us-east-1'
+                          aws_access_key_id='aws_access_key_id',
+                          aws_secret_access_key='aws_secret_access_key',
+                          region_name='region_name'
 )
 
 table = dynamodb.Table('raspiberry_Table')
